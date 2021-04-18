@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签学习2</title>
+</head>
+<body>
+<h3>下面是无须列表，以手机品牌为例</h3>
+<ul>
+    <li>华为</li>
+    <li>三星</li>
+    <li>小米</li>
+    <li>vivo</li>
+    <li>1+</li>
+    <li>other</li>
+</ul>
+<ol>
+    <li>1-华为</li>
+    <li>2-三星</li>
+    <li>3-小米</li>
+    <li>4-vivo</li>
+</ol>
+<dl>
+    <dt>
+        这里我我自定义的一个列表标题
+    </dt>
+    <dd>这是子项1</dd>
+    <dd>这是子项2</dd>
+    <dd>这是子项3</dd>
+</dl>
+<h3>
+    下面展示表单的常规使用
+</h3>
+<form action="xxx.html" method="get" name="自定义名字">
+    <!--    text属性用法-->
+    USER:<input type="text" name="username" value="请输入你的用户名" maxlength="6"><br>
+    <!--    password属性用法-->
+    PASS:<input type="password" name="password" value="请输入你的密码"><br>
+    <!--    radio单选框属性用法-->
+    性别：<input type="radio" name="radio1sex" value="man" id="man"><label for="man">man</label>
+    <input type="radio"
+           name="radio1sex"
+           checked="checked"
+           value="woman"
+           id="woman"><label
+        for="woman">woman</label><br>
+    <!--    checkbox复选框属性用法-->
+    爱好：<input type="checkbox" name="hobby" checked="checked" value="basketball">打篮球<input type="checkbox" name="hobby"
+                                                                                          value="eat">吃喝<input
+        type="checkbox" name="hobby" checked="checked" value="game">游戏<br>
+    <input type="submit" value="提交按钮">
+    <input type="reset" value="reset">
+    <input type="button" name="ok" value="可以绑定JS来使用"><br>
+    上传图片：<input type="file">
+
+</form>
+<strong>这里使用select标签做一个下拉菜单</strong><br>
+<label for="province">请选择你的所在省份：</label>
+<select id="province">
+    <option>jiangsu</option>
+    <option selected="selected">beijing</option>
+    <option>zhejiang</option>
+    <option>guangzhou</option>
+</select>
+<br>
+<label for="textarea">留言：</label>
+<textarea id="textarea" cols="100" rows="10">这是我今天想说的话。</textarea>
+
+</body>
+</html>
