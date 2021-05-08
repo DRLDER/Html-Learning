@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css实战</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Microsoft YaHei UI";
+        }
+
+        body {
+            background-color: #eaeaea;
+        }
+
+        .box {
+            width: 320px;
+            height: 420px;
+            background-color: #fff;
+            text-align: center;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+
+        .box img {
+            width: 100%;
+            height: 230px;
+        }
+
+        .review {
+            font-size: 14px;
+            height: 70px;
+            padding: 0 30px;
+            text-align: left;
+            margin-top: 25px;
+            font-weight: 450;
+        }
+
+        .appraise {
+            font-size: 10px;
+            text-align: left;
+            padding: 0 30px;
+            margin-top: 20px;
+        }
+
+        .info {
+            text-align: left;
+            padding: 0 30px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .review a {
+            text-decoration: none;
+            color: #535050;
+        }
+
+        .appraise a {
+            text-decoration: none;
+            color: darkgray;
+        }
+
+        .info a {
+            text-decoration: none;
+            font-style: normal;
+            color: black;
+        }
+
+        .box:hover {
+            /*border-right: 8px solid rgba(128, 128, 128, 0.35);*/
+            /*border-bottom: 8px solid rgba(128, 128, 128, 0.35);*/
+            box-shadow: 0px 5px 15px 5px rgba(128, 128, 128, 0.4);
+        }
+
+        .centerarea {
+            padding-top: 20px;
+
+        }
+
+        .div2 {
+            width: 320px;
+            height: 200px;
+            background-color: #fff;
+            text-align: center;
+            overflow: hidden;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .div2 .div2div1 {
+            height: 30px;
+            font-size: 14px;
+            font-weight: 350;
+            text-align: left;
+            border-bottom: 1px dotted gray;
+            line-height: 30px;
+            padding-left: 24px;
+        }
+
+        .div2 ul li {
+            padding-left: 24px;
+            list-style: none;
+            text-align: left;
+            height: 30px;
+            line-height: 30px;
+
+        }
+
+        .div2 ul li a {
+            font-style: normal;
+            color: #535050;
+            text-decoration: none;
+            display: block;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        .div2 ul li a:hover {
+            color: #7cdedb;
+        }
+
+        .div2div1li1 {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <img src="res/pic2.jpg" alt="error">
+    <p class="review"><a href="#">感受不一样的桌面配置，桌面搭配给你更加舒适、fashion的感觉！</a></p>
+    <div class="appraise"><a href="#">来自于117422832的评价</a></div>
+    <div class="info">
+        <label><a href="#">Polaris AirDesk云桌面搭配</a></label>
+        <label style="color: rgba(83,80,80,0.5);margin-left: 15px;margin-right: 5px;">|</label>
+        <label style="color: #ffbc69;font-weight: bold;">19999元</label>
+    </div>
+</div>
+<div class="div2">
+    <div class="div2div1">购买序号</div>
+    <ul>
+        <li class="div2div1li1"><a href="#">123</a></li>
+        <li><a href="#">456</a></li>
+        <li><a href="#">789</a></li>
+        <li><a href="#">012</a></li>
+        <li><a href="#">345</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

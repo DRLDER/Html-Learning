@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // console.log(Math.round(-3.5));
+        // console.log(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+        function getRandom() {
+            return Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+        }
+        //猜数字游戏
+        var randomNum = getRandom();
+        console.log(randomNum);
+        var userWt = prompt("请输入1-100你猜的数字大小：");
+        while(true){
+            if (userWt < randomNum){
+                userWt=prompt("你输入的数字小了，请再输入一次：");
+            }else if (userWt > randomNum){
+                userWt=prompt("你输入的数字大了，请再输入一次：");
+            }else{
+                alert('你猜对了，数字是：'+randomNum+'!');
+                break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

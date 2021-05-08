@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <textarea name="" id="textarea1" cols="30" rows="10"></textarea>
+    <button id="btn">send</button>
+</div>
+<div>
+    <ul id="textplace1">
+
+    </ul>
+</div>
+<script>
+    var textarea1 = document.getElementById('textarea1');
+    var btn = document.getElementById("btn");
+    var textplace1 = document.getElementById("textplace1");
+    btn.onclick = function () {
+
+        if (textarea1.value == '') {
+            alert('please write sth!');
+        } else {
+            var newTextNode = document.createElement('li');
+            newTextNode.innerText = textarea1.value;
+            console.log(textplace1.children.length);
+            if (textplace1.children.length == 0) {
+                textplace1.appendChild(newTextNode);
+            } else {
+                textplace1.insertBefore(newTextNode, textplace1.children[0]);
+            }
+
+            textarea1.value = '';
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/demo3.css">
+
+</head>
+<body>
+<div id="testplace" class="divtest">这是一个普通的文字块！</div>
+<div id="testplace1" class="divtest" style="top: 80%">这是一个普通的文字块2！</div>
+<div id="divin">
+    <div>newplace</div>
+</div>
+<script>
+    // var div1 = document.getElementById('testplace');
+    // console.dir(div1);
+    // div1.onmouseover = function () {
+    //     div1.innerText = "I changed the Text!";
+    // }
+    // var div1tag=document.getElementsByTagName('div');
+    // console.dir(div1tag);
+    // for (var i = 0; i < div1tag.length; i++) {
+    //     console.log(div1tag[i]);
+    // }
+    var divin=document.getElementById('divin');
+    console.log(divin.getElementsByTagName('div'));
+</script>
+</body>
+</html>

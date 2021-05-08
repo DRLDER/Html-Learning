@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Func(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+            this.loveGame=function (game,num){
+                console.log(this.uname+'游玩了'+game+num+'次!');
+            }
+        }
+
+        var lder = new Func('DRLDER', 18, '男');
+        console.log(lder.uname);
+        console.log(lder['age']);
+        lder.loveGame('ARK',100);
+        for (var lderKey in lder) {
+            console.log(lder[lderKey]);
+        }
+
+
+        var newOb = new Object();
+        newOb.name = 'DRLDER'
+        newOb.func1 = function (num1, num2) {
+            return num1 + num2;
+        }
+        console.log(newOb.name + '学习了' + newOb.func1(2 + 3, parseInt('4')) + '遍！');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

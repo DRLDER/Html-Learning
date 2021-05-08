@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'this';
+        // for (var strKey in str) {
+        //     console.log(str[strKey]);
+        // }
+        // console.log(str.charAt(2));
+        // console.log(str.charCodeAt(2));
+        // console.log(str[2]);
+        var newOb = {};
+        var str = "dkjjfkffdss";
+        var char = '';
+        for (var i = 0; i < str.length; i++) {
+            char = str.charAt(i);
+            if (newOb[char]) {
+                newOb[char]++;
+            } else {
+                newOb[char] = 1;
+            }
+        }
+        var obMax = 0;
+        var keyName = '';
+        for (var newObKey in newOb) {
+            if (obMax >= newOb[newObKey]) {
+                continue;
+            } else {
+                obMax = newOb[newObKey];
+                keyName = newObKey;
+            }
+        }
+        console.log(newOb)
+        console.log(keyName + '出现了' + obMax + '次！');
+
+        // for (const newObKey in newOb) {
+        //     console.log(newOb);
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

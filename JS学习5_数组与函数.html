@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var arr=new Array();
+        // var arr=[];
+        // var arr = [1, 2, '3', 'String1', true]
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log(typeof arr[i]);
+        // }
+        // var arr = [];
+        // arr = [1, 2, 3, 4];
+        // arr[5] = 10;
+        // console.log(arr);
+        // function getSum(num1,num2){
+        //     if(num1>num2){
+        //         console.log("error:num2<num1!");
+        //         return false;
+        //     }else {
+        //         var sum=num1;
+        //         for (var i = num1; i < num2; i++) {
+        //             sum+=(i+1);
+        //         }
+        //         console.log(sum);
+        //     }
+        //
+        // }
+        // function sayHi(){
+        //     console.log('hello!')
+        // }
+        // getSum(1,2);
+        // sayHi();
+        function getMax() {
+            var getArr = arguments;
+            // console.log(getArr[2]);
+            var maxNum = getArr[0];
+            for (var i = 0; i < getArr.length - 1; i++) {
+                maxNum = maxNum >= getArr[i + 1] ? maxNum : getArr[i + 1];
+            }
+            return maxNum;
+        }
+
+        //正序冒泡法，后期可使用。
+        function getBabelline() {
+            var arrGet = arguments;
+            var temp = arrGet[0];
+            var tip = false;
+            while (true) {
+                for (var i = 0; i < arrGet.length - 1; i++) {
+                    if (arrGet[i] >= arrGet[i + 1]) {
+                        temp = arrGet[i];
+                        arrGet[i] = arrGet[i + 1];
+                        arrGet[i + 1] = temp;
+                    }
+                }
+
+                for (var i = 0; i < arrGet.length - 1; i++) {
+                    if (arrGet[i] > arrGet[i + 1]) {
+                        break;
+                    }
+                    if (i >= arrGet.length - 2) {
+                        return arrGet;
+                    }
+                }
+            }
+
+        }
+
+        // console.log(getMax(1, 2, 30, 6, 3, 123, 23, 41, 32, 99));
+        // console.log(getBabelline(13, 3, 123, 21, 23, 44, 12, 34, 11));
+        var fun1 = function () {
+            console.log('hi,' + arguments[0]);
+        }
+        fun1('guzijian')
+
+        var obj = {
+            name: 'DRLDER',
+            age: 18,
+            sex: 'male',
+            fun1: function () {
+                console.log('hi,' + arguments[0]);
+            }
+        }
+        console.log(obj.name);
+        obj.fun1('123', '345');
+
+        var arr2 = [1, 2, 3, 4, 5, 6, 1, 2, 4, 2, 2, 1, 7, 12];
+
+        function getNoSimilar(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+
+        console.log(getNoSimilar(arr2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

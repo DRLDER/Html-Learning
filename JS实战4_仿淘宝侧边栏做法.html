@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center {
+            margin: 1% 5%;
+            text-align: center;
+            width: 90%;
+        }
+
+        #header {
+            background-color: #c0de96;
+            height: 350px;
+        }
+
+        #main {
+            background-color: #e2b0a5;
+            height: 550px;
+        }
+
+        #bodyplace {
+            background-color: #9c9c71;
+            height: 1500px;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #9ee7ca;
+            width: 45px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+<div id="header" class="center">header</div>
+<div id="main" class="center">main</div>
+<div id="bodyplace" class="center">bodyplace</div>
+<div id="toolbar">
+    <div id="goback"></div>
+</div>
+<script>
+    var getheader = document.getElementById('header')
+    var getmain = document.getElementById('main')
+    var getbodyplace = document.getElementById('bodyplace')
+    var gettoolbar = document.getElementById('toolbar')
+    gettoolbar.style.top = getmain.offsetTop + 'px';
+    gettoolbar.style.right = 5 + 'px';
+
+    function btnaction() {
+        console.log('AC')
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        gettoolbar.removeEventListener('click', btnaction)
+    }
+
+    window.addEventListener('scroll', function () {
+        console.log(window.pageYOffset, getmain.offsetTop, getbodyplace.offsetTop)
+        if (window.pageYOffset >= getmain.offsetTop && window.pageYOffset < getbodyplace.offsetTop) {
+            gettoolbar.removeEventListener('click', btnaction)
+            console.log('AC1')
+            gettoolbar.style.position = 'fixed';
+            gettoolbar.style.top = 5 + 'px';
+            gettoolbar.style.right = 5 + 'px';
+
+        } else if (window.pageYOffset < getmain.offsetTop) {
+            gettoolbar.style.position = 'absolute';
+            gettoolbar.style.top = getmain.offsetTop + 'px';
+            gettoolbar.style.right = 5 + 'px';
+        } else if (window.pageYOffset >= getbodyplace.offsetTop) {
+            gettoolbar.addEventListener('click', btnaction)
+            console.log('AC3')
+        }
+
+    })
+
+</script>
+</body>
+</html>

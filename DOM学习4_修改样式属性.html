@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            position: absolute;
+            height: 200px;
+            line-height: 200px;
+            width: 500px;
+            top: 120px;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, 0);
+            font-family: "Microsoft Himalaya", serif;
+            border-radius: 10px;
+            font-weight: bold;
+            background-color: rgb(181, 224, 209);
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.45);
+        }
+
+        .mouseon {
+            fontSize: 30px;
+            color: rgb(224, 142, 142);
+            background-color: rgb(198, 174, 59);
+        }
+
+        .mouseout {
+            fontSize: 20px;
+            color: rgb(198, 174, 59);
+            backgroundColor: rgb(181, 224, 209);
+        }
+    </style>
+</head>
+<body>
+<div class="div1" id="div1">这是一段文字</div>
+<script>
+    var div1 = document.querySelector('#div1');
+    var flag = 0;
+    div1.onmouseover = function () {
+        if (flag == 0) {
+            this.className = 'div1 mouseon';
+            flag = 1;
+        }
+    }
+    div1.onmouseout = function () {
+        if (flag == 1) {
+            this.className = 'div1 mouseout';
+            flag = 0;
+        }
+    }
+</script>
+</body>
+</html>

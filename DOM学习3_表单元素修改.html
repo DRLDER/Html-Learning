@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="write in!" id="textline">
+<button id="btn1">change</button>
+<script>
+    var textPut = document.getElementById('textline');
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        textPut.type = "password";
+        textPut.value = 'i changed!';
+
+    }
+</script>
+</body>
+</html>

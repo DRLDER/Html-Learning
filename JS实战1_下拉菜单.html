@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav {
+            overflow: hidden;
+        }
+
+        .nav > div {
+            float: left;
+            height: 500px;
+            width: 150px;
+            border: 1px solid black;
+        }
+
+        .nav > div > div {
+            height: 100px;
+            width: 150px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="nav" class="nav">
+    <div>
+        <div>11</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+    </div>
+    <div>
+        <div>21</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+    </div>
+    <div>
+        <div>32</div>
+        <div>31</div>
+        <div>32</div>
+        <div>33</div>
+    </div>
+    <div>
+        <div>43</div>
+        <div>41</div>
+        <div>42</div>
+        <div>43</div>
+        <div>45</div>
+    </div>
+</div>
+<script>
+    var getnav = document.getElementById('nav');
+    var getdiv = getnav.children;
+    // console.dir(getdiv);
+    var getheaddiv = [];
+    for (let i = 0; i < getdiv.length; i++) {
+        getheaddiv[i] = getdiv[i].firstElementChild;
+    }
+    // console.log(getheaddiv);
+    var getuchilddiv = [];
+    for (let i = 0; i < getdiv.length; i++) {
+        getuchilddiv[i] = getdiv[i].children;
+    }
+    var getunheaddiv = [];
+    var flag = 0;
+    for (let i = 0; i < getuchilddiv.length; i++) {
+        for (let j = 0; j < getuchilddiv[i].length; j++) {
+            if (j != 0) {
+                getunheaddiv[flag++] = getuchilddiv[i][j];
+            }
+
+        }
+    }
+    // console.log(getunheaddiv);
+    for (let i = 0; i < getunheaddiv.length; i++) {
+        getunheaddiv[i].style.display = 'none';
+    }
+    for (let i = 0; i < getheaddiv.length; i++) {
+        getheaddiv[i].onmousemove = function () {
+            this.style.backgroundColor = 'rgb(132,227,227)';
+            for (let j = 0; j < getuchilddiv[i].length; j++) {
+                getuchilddiv[i][j].style.display = 'block';
+            }
+
+        }
+        getheaddiv[i].onmouseleave = function () {
+            this.style.backgroundColor = 'white';
+            for (let j = 0; j < getuchilddiv[i].length-1; j++) {
+                getuchilddiv[i][j+1].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="overplace" class="divtest">鼠标移到这里！</div>
+<script>
+    var overP = document.getElementById('overplace');
+    var date = new Date();
+    overP.onmouseover = function () {
+        if (overP.innerText == "鼠标移到这里！") {
+            overP.innerText = "再一次";
+        } else if (overP.innerText == "再一次") {
+            overP.innerText = date;
+        } else {
+            overP.innerText = "鼠标移到这里！";
+        }
+
+    }
+
+
+    // overP.onmouseover=function (){
+    //     alert('你划过了我！');
+    // }
+</script>
+</body>
+</html>
