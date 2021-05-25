@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+</head>
+<body>
+<div class="div1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<script>
+    // console.log($(".div1").children());
+    // var colorlab = ['red', 'blue', 'yellow'];
+    // $(".div1").children().each(function (i, domelem) {
+    //     console.log(i);
+    //     console.log(domelem);
+    //     //使用下面的选择方法可以让我们选择元素对象，而非html内容
+    //     console.log($(domelem));
+    //     $(this).css('color', colorlab[i]);
+    // })
+    //方法2
+    var colorlab = ['red', 'blue', 'yellow'];
+    $.each($(".div1").children(), function (i, domelem) {
+        console.log(i);
+        console.log(domelem);
+        //使用下面的选择方法可以让我们选择元素对象，而非html内容
+        console.log($(domelem));
+        $(this).css('color', colorlab[i]);
+    })
+    // 我们知道each方法可以遍历任何对象
+    $.each({
+        name: "polaris",
+        age: 18
+    }, function (i, ele) {
+        console.log(i);
+        // console.log(ele);
+    })
+</script>
+</body>
+</html>

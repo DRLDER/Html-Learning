@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+</head>
+<body>
+<div>我是内容部分的前一个div</div>
+<div class="content">
+    <div>我是原本就是存在的1</div>
+    <div>我是原本就是存在的2</div>
+    <div>我是原本就是存在的3</div>
+    <div>我是原本就是存在的4</div>
+    <div>我是原本就是存在的5</div>
+</div>
+<div>我是内容部分的后一个div</div>
+<script>
+    var newelem = $("<div>我原本不存在</div>");
+    var newelem1 = $("<div>我原本不存在1</div>");
+    var newelem2 = $("<div>我原本不存在2</div>");
+    var newelem3 = $("<div>我原本不存在3</div>");
+    $(".content").append(newelem);
+    $(".content").prepend(newelem1);
+    $(".content").before(newelem2);
+    $(".content").after(newelem3);
+    console.log($(".content").children().length)
+</script>
+</body>
+</html>

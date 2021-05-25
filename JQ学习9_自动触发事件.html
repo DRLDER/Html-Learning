@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+</head>
+<body>
+<div class="div1">这是一个div</div>
+<script>
+    $(".div1").on({
+        click: function () {
+            alert('1')
+        },
+        mouseover: function () {
+            alert(1)
+            $(this).css({
+                background: "red"
+            })
+        }
+    })
+    // $(".div1").click()
+    // $(".div1").trigger("mouseover")
+    // 这个方法可以不触发默认事件而执行方法
+    $(".div1").triggerHandler("mouseover")
+</script>
+</body>
+</html>

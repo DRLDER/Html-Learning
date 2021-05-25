@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #80ac60;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .div1:hover {
+            background-color: #aceae3;
+            box-shadow: 0 0 5px 5px #908181;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">clickme</div>
+<script>
+    $(".div1").on({
+        mouseover: function () {
+            // console.log(1)
+            $(this).stop().animate({
+                width: 200,
+                height: 100
+            })
+        },
+        mouseout: function () {
+            // console.log(1)
+            $(this).stop().animate({
+                width: "100px",
+                height: "50px"
+            })
+        }
+    })
+    $("body").on("click", "div", function () {
+        alert(1)
+    })
+    var newdiv = $("<div></div>")
+    newdiv.text('这是新div')
+    newdiv.css({
+        position: "absolute",
+        top: 100
+    })
+    $("body").append(newdiv)
+
+</script>
+</body>
+</html>

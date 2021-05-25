@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+    <style>
+        .div1 {
+            border-radius: 5px;
+            height: 50px;
+            width: 100px;
+            line-height: 50px;
+            background-color: #b69191;
+            text-align: center;
+        }
+
+        <
+        style >
+        body {
+            margin: 0;
+        }
+
+        .tabnav {
+            background-color: #b8cdca;
+            overflow: hidden;
+        }
+
+        .tabnav > div {
+            float: left;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #4a5f5c;
+        }
+
+        .tabnav > div:hover {
+            color: #cefffa;
+            background-color: #d97070;
+        }
+
+        .content {
+            width: 150px;
+            height: 100px;
+            background-color: #c7b986;
+            text-align: center;
+            line-height: 100px;
+
+        }
+
+        .content > div {
+            display: none;
+        }
+
+        .imgcontent {
+            width: 900px;
+
+        }
+
+        .imgcontent > ul {
+            list-style: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgcontent > ul > li {
+            float: left;
+        }
+
+        .imgcontent > ul > li > img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .animatediv {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #dbe0ad;
+        }
+    </style>
+    </style>
+</head>
+<body>
+<div class="div1">
+    隐藏效果
+</div>
+<button id="showorhidebtn">
+    click me to change show or hide.
+</button>
+<script>
+    // $("#showorhidebtn").click(function () {
+    //     if ($(".div1").css('display') == "block"){
+    //         $(".div1").text("隐藏效果");
+    //         $(".div1").hide(1000, "swing");
+    //     }else{
+    //         $(".div1").text("显示效果");
+    //         $(".div1").show(1000, "swing");
+    //     }
+    //
+    // })
+    $("#showorhidebtn").click(function () {
+        $(".div1").toggle(1000, "linear", function () {
+            if ($(".div1").css('display') == "none") {
+                $(".div1").text("显示效果");
+            } else {
+                $(".div1").text("隐藏效果");
+            }
+        });
+
+    })
+</script>
+<div class="tabnav">
+    <div>化妆品</div>
+    <div>珠宝</div>
+    <div>电脑</div>
+    <div>日常用品</div>
+</div>
+<div class="content">
+    <div>这里是化妆品</div>
+    <div>这里是珠宝</div>
+    <div>这里是电脑</div>
+    <div>这里是日常用品</div>
+</div>
+<script>
+    // $(".tabnav>div").bind("mouseover", function () {
+    //     $(".content>div").eq($(this).index()).slideDown(1000).siblings("div").slideUp()
+    // })
+    // $(".tabnav").bind("mouseleave",function () {
+    //     $(".content").slideUp(2000)
+    // })
+    // $(".tabnav").bind("mouseenter",function () {
+    //     $(".content").slideDown(2000)
+    // })
+    $(".tabnav>div").bind("mouseover", function () {
+        $(".content>div").eq($(this).index()).stop().slideDown(1000).siblings("div").stop().slideUp(1000)
+    })
+    $(".tabnav").bind("mouseenter", function () {
+        if ($(".content").css("display") == "none") {
+            $(".content").stop().slideToggle(1000)
+        }
+    })
+    $(".tabnav").bind("mouseleave", function () {
+        $(".content").stop().slideToggle(1000)
+    })
+</script>
+<div class="fadediv">
+    这里是一个淡入淡出的效果
+</div>
+<button id="fadeclick">启用效果</button>
+<script>
+    $("#fadeclick").bind('click', function () {
+        $(".fadediv").stop().fadeToggle(1000, 'swing');
+    })
+</script>
+<div class="imgcontent">
+    <ul>
+        <li><img src="image/炭治郎1.jpeg" alt="炭治郎"></li>
+        <li><img src="image/炭治郎2.jpeg" alt="炭治郎"></li>
+        <li><img src="image/炭治郎3.jpeg" alt="炭治郎"></li>
+    </ul>
+</div>
+<script>
+    $(".imgcontent>ul>li").hover(function () {
+        $(this).siblings("li").stop().fadeTo(1000, 0.5)
+    }, function () {
+        $(this).siblings("li").stop().fadeTo(1000, 1)
+    })
+</script>
+<div class="animatediv">这里有一个动画效果，我想让它向</div>
+<button id="animateclick" style="float: right;">启用效果</button>
+<script>
+    $("#animateclick").bind('click', function () {
+
+        if ($(".animatediv").css('height') == "100px") {
+            $(".animatediv").stop().animate
+            ({left: 0, top: 0, opacity: 1, width: "200px", height: "200px"}, 1000)
+
+        } else {
+            $(".animatediv").stop().animate
+            ({left: "500px", top: "1000px", opacity: .5, width: "100px", height: "100px"}, 1000)
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    nihao
+</div>
+<button id="creatediv" value="生成">生成</button>
+<script>
+    var getdiv1 = document.getElementById('div1');
+    var creatediv = document.getElementById('creatediv');
+
+    function action() {
+        var newdiv = document.createElement('div');
+        var newlabel = document.createElement('label');
+        newlabel.innerText = 'testlabel';//data['xxxx']
+        var newbtn = document.createElement('button');
+        newbtn.innerText = 'btn';
+        newbtn.addEventListener('click', function () {
+            console.log($('#div1').html())//innerText//html()=>innerHtml
+            this.parentElement.children[0].innerText = 'testtext!'
+        })
+
+        newdiv.appendChild(newlabel);
+        newdiv.appendChild(newbtn);
+        getdiv1.appendChild(newdiv);
+    }
+
+    creatediv.addEventListener('click', function () {
+        for (let i = 0; i < 10; i++) {
+            action();
+        }
+
+    })
+</script>
+</body>
+</html>

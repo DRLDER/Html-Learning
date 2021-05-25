@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .tabnav {
+            background-color: #b8cdca;
+            overflow: hidden;
+        }
+
+        .tabnav > div {
+            float: left;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #4a5f5c;
+        }
+
+        .tabnav > div:hover {
+            color: #cefffa;
+            background-color: #d97070;
+        }
+
+        .content > div {
+            display: none;
+        }
+
+        .content .show {
+            display: block;
+        }
+
+        .content .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="tabnav">
+    <div>化妆品</div>
+    <div>珠宝</div>
+    <div>电脑</div>
+    <div>日常用品</div>
+</div>
+<div class="content">
+    <div>这里是化妆品</div>
+    <div>这里是珠宝</div>
+    <div>这里是电脑</div>
+    <div>这里是日常用品</div>
+</div>
+<script>
+    $(".tabnav>div").bind("mouseover", function () {
+        $(".content>div").eq($(this).index()).removeClass().addClass("content show").siblings("div").removeClass().addClass("content hide")
+    })
+</script>
+</body>
+</html>

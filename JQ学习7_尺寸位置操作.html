@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            position: relative;
+            height: 200px;
+            background-color: #ce9b9b;
+
+        }
+
+        .header > div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #646d8e;
+        }
+
+        .nav {
+            height: 400px;
+            background-color: #b8af86;
+        }
+
+        .clickback {
+            position: fixed;
+            display: none;
+            top: 0;
+            right: 0;
+            background-color: #503939;
+            color: #cefffa;
+            cursor: crosshair;
+        }
+
+        .body {
+            height: 1500px;
+            background-color: #aace9b;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: #6a9590;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <div>这是头部</div>
+    </div>
+    <div class="nav">这是标头</div>
+    <div class="clickback">返回顶部</div>
+    <div class="body">
+        <div>这是正文</div>
+    </div>
+    <div class="footer">这是尾部</div>
+</div>
+
+<script>
+    // 首先我们来使用一下宽度的获取
+    console.log($(".header>div").width())
+    // 然后我们把它宽度修改为120px
+    $(".header>div").width('120px')
+    // 然后我们试一下包含padding和margin的方法
+    console.log($(".header>div").outerWidth(true))
+    // 下面我们试一下小div对于页面的左偏移，并修改它，以及对父元素的左偏移
+    console.log($(".header>div").offset().left)
+    // $(".header>div").offset({left: 130})
+    console.log($(".header>div").offset().left)
+    console.log($(".header>div").position().left)
+    //下面我们来试一试页面滚动了多少
+    // $(window).scroll(function () {
+    //     console.log($(document).scrollTop())
+    // })
+    // 当我们滚动到正文的时候就显示跳转至顶部的按钮
+
+    $(window).scroll(function () {
+        // console.log($(document).scrollTop())
+        if ($(document).scrollTop() <= $(".body").offset().top) {
+            $(".clickback").fadeOut()
+        }
+        if ($(document).scrollTop() >= $(".body").offset().top) {
+            $(".clickback").fadeIn()
+        }
+    })
+    $(".clickback").click(function () {
+        // $(document).scrollTop(0)
+        //由于document不是元素，所以animate不适用于document，我们将body，html转至顶部即可
+        $("html").stop().animate({
+            scrollTop: 0
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery.js"></script>
+    <style>
+        body {
+            margin: 0 0;
+            padding: 0 0;
+        }
+
+        ul {
+            padding-left: 0;
+            margin: 0 0;
+        }
+
+        li {
+            list-style: none;
+            font-size: 20px;
+            font-family: "Microsoft YaHei UI";
+            font-weight: bold;
+            color: #65827e;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #e3d3b0;
+            cursor: auto;
+        }
+
+        .div1 {
+            float: left;
+            width: 180px;
+        }
+
+        .content {
+            float: left;
+            width: 300px;
+            height: 250px;
+            background-color: #797878;
+        }
+
+        .box1 {
+            background-color: #80b1aa;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 300px;
+            left: 400px;
+            transition: all 0.5s;
+        }
+
+        .clickit {
+            background-color: #b1a380;
+            transform: rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<button>"click"</button>
+<script>
+    $("button").click(function () {
+        // $(this).css("background", "rgb(232,228,150)");
+        // $(this).siblings("button").css("background", "");
+        $(this).css("background", "rgb(232,228,150)").siblings("button").css("background", "");
+    })
+</script>
+<div class="div1">
+    <ul>
+        <li>手机</li>
+        <li>电脑</li>
+        <li>笔记本</li>
+        <li>护肤品</li>
+        <li>今日特卖</li>
+    </ul>
+</div>
+<div class="content">
+
+</div>
+<script>
+    $("ul>li").bind("mouseover", function () {
+        $(".content").text($(this).text())
+    })
+</script>
+<div class="box1">
+
+</div>
+<script>
+    $(".box1").click(function () {
+        $(this).toggleClass("clickit");
+    })
+</script>
+</body>
+</html>

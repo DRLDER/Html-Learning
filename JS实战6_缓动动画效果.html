@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .newdiv {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            height: 100px;
+            width: 100px;
+            background-color: #7cdedb;
+        }
+
+        #infoplace {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: blue;
+        }
+
+
+        #infopad {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 40px;
+            text-align: right;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<button id="clickme">click</button>
+<div class="newdiv" id="newdiv"></div>
+<div id="infoplace">
+    <span id="infolabel"><<<</span>
+    <div id="infopad">反馈给我</div>
+</div>
+<script>
+    var clickme = document.getElementById('clickme');
+    var getdiv = document.getElementById('newdiv');
+    var getinfoLabel = document.getElementById('infolabel');
+    var getinfopad = document.getElementById("infopad");
+
+    //动画函数，可以直接使用的。
+    function animateslowmove(obj, target, callback, subspeed) {
+        // alert('AC')
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var step = (target - obj.offsetLeft) / subspeed
+            step = step > 0 ? Math.ceil(step) : Math.floor(step)
+            if (obj.offsetLeft == target) {
+                //判定回调函数是否有传到函数调用
+                if (callback) {
+                    callback();
+                }
+
+                clearInterval(obj.timer);
+            }
+            obj.style.left = obj.offsetLeft + step + 'px';
+        }, 30);
+    }
+
+    clickme.addEventListener('click', function () {
+        if (getdiv.offsetLeft < 500) {
+            animateslowmove(getdiv, 500, function () {
+                getdiv.style.backgroundColor = 'rgb(178,215,143)'
+            }, 10)
+        } else {
+            animateslowmove(getdiv, 0, function () {
+                getdiv.style.backgroundColor = '#7cdedb'
+            }, 10)
+        }
+
+    })
+    getinfoLabel.addEventListener('mouseenter', function () {
+        // alert('AC')
+        animateslowmove(getinfopad, -200, function () {
+
+        }, 10)
+    })
+    getinfoLabel.addEventListener('mouseleave', function () {
+        // alert('AC')
+        animateslowmove(getinfopad, 0, function () {
+
+        }, 10)
+    })
+
+
+</script>
+</body>
+</html>

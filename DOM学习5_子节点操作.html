@@ -7,21 +7,24 @@
 <body>
 <ul>
     <li>
-        <div></div>
+        <div>text!</div>
     </li>
+    <li id="testnode"></li>
     <li></li>
     <li></li>
-    <li></li>
-    <li></li>
+    <li>testtext1!</li>
 </ul>
 <script>
     var getUl = document.querySelector('ul');
     var child = document.querySelector('ul').children;
-    console.log(child);
-    console.log(getUl.childNodes);
-    console.log(getUl.firstChild);
-    console.log(getUl.lastChild);
-    console.log(getUl.firstElementChild);
+    var gettestnode = document.querySelector('#testnode');
+    // console.log(child);
+    // console.log(getUl.childNodes);
+    // console.log(getUl.firstChild);
+    // console.log(getUl.lastChild);
+    // console.log(getUl.firstElementChild);
+    console.log(gettestnode.previousSibling);
+    console.log(gettestnode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling);
 </script>
 
 </body>
